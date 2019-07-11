@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SampleMap"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="SampleMap.MainPage">
+
+    <RelativeLayout>
+      
+        <maps:Map MapType="Street" x:Name="formMap" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,  
+                    Property=Width,Factor=1}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,  
+                    Property=Height,Factor=1}"/>
+
+        <Image Source="locationOn.png" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,  
+                          ElementName=formMap,Property=Height,Factor=0.75}" RelativeLayout.XConstraint="{ConstraintExpression  
+                          Type=RelativeToView,ElementName=formMap,Property=Width,Factor=0.84}" HeightRequest="60" WidthRequest="60">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="MoveToCurrentlocation"/>
+            </Image.GestureRecognizers>
+        </Image>
+    </RelativeLayout>
+
+</ContentPage>
